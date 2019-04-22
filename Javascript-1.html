@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>자바스터디</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			// 사용자로부터 숫자를 입력받아 양수,0,음수를 구분하는 프로그램
+			$("button:first").click(function() {
+				var inputValue = prompt('숫자를 입력하십시오.', '음수~양수 값');
+				var changeToNumber = Number(inputValue);
+
+				if (changeToNumber < 0) {
+					alert('"음수" 입니다.');
+				} else if (changeToNumber == 0) {
+					alert('0 입니다');
+				} else {
+					alert("\'양수\' 입니다");
+				}
+			});
+
+			// 사용자로부터 숫자를 입력받아 홀수와 짝수를 구분하는 프로그램
+			// $("button:second").click(function() {
+			// 	var inputValue = prompt
+			// })
+
+			$(".clickme").click(function(){
+				// if($(this).children("p").length < 3) {
+				// 	$(this).append("<p style='background-color:red'>child</p>");
+				// }
+				$(this).children("p").length > 2 || $(this).append("<p style='background-color:red'>child</p>");
+			});
+		});	
+	</script>
+</head>
+<body>
+	<h2>사용자로부터 숫자를 입력받아 양수,0,음수를 구분하는 프로그램</h2>
+	<button type="button" style="margin:50px 0;font-size: 50px;">click</button>
+	<hr>
+	<h2>사용자로부터 숫자를 입력받아 홀수와 짝수를 구분하는 프로그램</h2>
+	<div class="clickme" style="padding:50px 0;border:2px solid;">Click</div>
+</body>
+</html>
