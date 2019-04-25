@@ -90,16 +90,32 @@ html, body {
 .square > li {
     float: left;
     width: 33.333333%;
-    height: 33.33333%;
+	height: 33.33333%;
+	border: 2px solid #fff;
 	box-sizing: border-box;
 }
 
 .square button {
 	display: block;
+	position: relative;
 	width: 100%;
 	height: 100%;
 	font-size: 50px;
 	font-weight: 700;
+}
+.square button::after {
+	display: block;
+	position: absolute;
+	top: 50%;
+	width: 0;
+	height: 5px;
+	background-color: #000;
+	transition: width 1s ease;
+	content: '';
+}
+
+button.line-through::after {
+	width: 100%;
 }
 
 
