@@ -81,14 +81,14 @@ function checkWinner () {
             } else {
                 drawingLine(6);
             }
-            alert(`Congraturations! '${liElementIndex[i][0]}'Player Win!!`);
+            alert(`Congratulations! '${liElementIndex[i][0]}'Player Win!!`);
             disableAllButton();
             return true;
         }
 
         // 세로 체크
         if (liElementIndex[0][i] !== null && liElementIndex[0][i] === liElementIndex[1][i] && liElementIndex[0][i] === liElementIndex[2][i]) {
-            alert(`Congraturations! '${liElementIndex[0][i]}'Player Win!!`);
+            alert(`Congratulations! '${liElementIndex[0][i]}'Player Win!!`);
             disableAllButton();
             return true;
         }
@@ -97,13 +97,13 @@ function checkWinner () {
     // 대각선 체크
     if (liElementIndex[0][0] !== null) {
         if (liElementIndex[0][0] === liElementIndex[1][1] && liElementIndex[0][0] === liElementIndex[2][2]) {
-            alert(`Congraturations! '${liElementIndex[0][0]}'Player Win!!`);
+            alert(`Congratulations! '${liElementIndex[0][0]}'Player Win!!`);
             disableAllButton();
             return true;
         }
     } else if (liElementIndex[0][2] !== null) {
         if (liElementIndex[0][2] === liElementIndex[1][1] && liElementIndex[0][2] === liElementIndex[2][0]) {
-            alert(`Congraturations! '${liElementIndex[0][2]}'Player Win!!`);
+            alert(`Congratulations! '${liElementIndex[0][2]}'Player Win!!`);
             disableAllButton();
             return true;
         }
