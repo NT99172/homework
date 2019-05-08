@@ -4,9 +4,10 @@ let ulElement = document.querySelector('.square'),
     availableLiElement,
     row,
     column,
-    liElementIndex = [[null, null, null], [null, null, null], [null, null, null]];
-    turnMark = 'X';
-    isMyTurn = true;
+    liElementIndex = [[null, null, null], [null, null, null], [null, null, null]],
+    turnMark = 'X',
+    isMyTurn = true,
+    random;
 
 
 liElement.forEach(function (item, index) {
@@ -15,24 +16,25 @@ liElement.forEach(function (item, index) {
 
 function selectThisBox (index) {
     return function (e) {
-        if (isMyTurn) {
-            isMyTurn = false;
-            console.log('my');
-        } else {
-            isMyTurn = true;
-            console.log('AI\'s');
-        }
-        // row = Math.floor(index / 3);
-        // column = index % 3;
-        // e.target.textContent = turnMark;
-        // liElementIndex[row][column] = turnMark;
-        // isMyTurn === true ? isMyTurn = false : isMyTurn = true;
-        // turnMark === 'X' ? turnMark = 'O' : turnMark = 'X';
-
-        // availableLiElement = liElement.filter(function (item) {
-        //     return item.children[0].textContent === '';
-        // });
+        row = Math.floor(index / 3);
+        column = index % 3;
         
-        // console.log(index, row, column,  liElement, availableLiElement, liElementIndex);
+        e.target.textContent = turnMark;
+        liElementIndex[row][column] = turnMark;
+        
+        // isMyTurn = isMyTurn ? false : true;
+        isMyTurn = !isMyTurn;
+        turnMark = turnMark === 'X' ? 'O' : 'X';
+        
+        availableLiElement = liElement.filter(function (item) {
+            return item.children[0].textContent === '';
+        });
+
+        if ( isMyTurn === false ) {
+            random = Math.floor(Math.random() * availableLiElement.length);
+            availableLiElement[random].children[0].click();
+        }
+
+        console.log(liElement, availableLiElement, liElementIndex);
     }
 }
