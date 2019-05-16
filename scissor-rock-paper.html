@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .img {
+            margin-bottom: 20px;
+            width: 442px;
+            height: 154px;
+            background: url(img/rockscissorspaper.gif) no-repeat;
+        }
+        .rock {
+            width: 126px;
+            background-position: -6px 0;
+        }
+        .scissors {
+            width: 114px;
+            background-position: -156px 0;
+        }
+        .paper {
+            width: 156px;
+            background-position: -280px 0;
+        }
+        .reload {
+            margin-left: 20px;
+        }
+    </style>
+    <title>가위바위보</title>
+</head>
+<body>
+    <h1>가위바위보</h1>
+    <div class="img rock"></div>
+    <button type="button" class="button" data-hands="-1">가위</button>
+    <button type="button" class="button" data-hands="0">바위</button>
+    <button type="button" class="button" data-hands="1">보</button>
+    <button type="button" class="reload">재시작</button>
+    <p class="result"></p>
+    <ul>
+        <li>당신이 이긴 횟수: <strong class="userWin"></strong></li>
+        <li>컴퓨터가 이긴 횟수: <strong class="computerWin"></strong></li>
+        <li>비긴 횟수: <strong class="draw"></strong></li>
+    </ul>
+    <script src="js/rockscissorspaper.js"></script>
+</body>
+</html>
